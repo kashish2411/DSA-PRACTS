@@ -14,7 +14,7 @@ class hashtable
 {
 	public:
 		dic ht[max];
-		hashtable()	//constructor
+		hashtable()
 		{
 			for(int i=0;i<max;i++)
 			{
@@ -32,14 +32,14 @@ class hashtable
 			}
 			return(s%max);
 		
-		}//end of hash
+		}
 		
 		void insert_word(dic d);
 		void display();
 		int search_word(char cW[]);
 		void del_word(char cW[]);
 		
-};//end of class
+};
 
 void hashtable::insert_word(dic d)
 {
@@ -57,7 +57,7 @@ void hashtable::insert_word(dic d)
 		}
 	}	
 		
-}//end  of insert
+}
 
 void hashtable::display()
 {
@@ -67,7 +67,7 @@ void hashtable::display()
 		cout<<"\n"<<i<<"\t\t"<<ht[i].cWord<<"\t\t"<<ht[i].cMeaning<<"\n";
 	}
 
-}//end of display
+}
 
 int hashtable::search_word(char cW[10])
 {
@@ -85,7 +85,7 @@ int hashtable::search_word(char cW[10])
 	if(iFlag==0)
 	cout<<"\nWord Not Found";
 	
-}//end of search_word
+}
 
 void hashtable::del_word(char cW[10])
 {
@@ -105,7 +105,7 @@ void hashtable::del_word(char cW[10])
 	if(iFlag==0)
 	cout<<"\n Word Not Found";
 	
-}//end of del_word
+}
 	
 int main()
 {
@@ -115,15 +115,15 @@ int main()
 	dic d;
 	do
 	{
-		cout<<"\n---------------LIST--------------\n";
-		cout<<"1.INSERT WORD\n2.DISPLAY\n3.SEARCH MEANING\n4.DELETE\n5.EXIT\n";
+		
+		cout<<"1.INSERT WORD   2.DISPLAY     3.SEARCH MEANING    4.DELETE";
 		cout<<"Enter your choice:";
 		cin>>iCh;
 		cout<<"\n";
 		
 		switch(iCh)
 		{
-			case 1://insert
+			case 1:
 				cout<<"\n Enter word to insert:";
 				cin>>d.cWord;
 				cout<<"\n Enter Meaning:";
@@ -131,26 +131,25 @@ int main()
 				h.insert_word(d);
 				break;
 				
-			case 2://display
+			case 2:
 				h.display();
 				break;
 				
-			case 3://search
+			case 3:
 				cout<<"\n Enter word to be searched:";
 				cin>>cW;
 				h.search_word(cW);
 				break;
 				
-			case 4://delete
+			case 4:
 				cout<<"\n Enter the word to be deleted:";
 				cin>>cW;
 				h.del_word(cW);
 				break;
 				
-			case 5://exit
-				break;
+			
 				
 		}//end of switch
-	}while(iCh!=5);			
+	}while(iCh!=4);			
 return 0;
 }			
